@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.html">
+    <link rel="stylesheet" type="text/css" href="Styles/style.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light shadow-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item bread">
+                        <a class="nav-link" href="Blogs.html">Blogs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">About me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Blogpost 3</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">random</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="paddingArticleS">
+            <article class="border border-primary rounded " id="theMargin">
+                <header>
+                    <h2>Samenvatting gastcollege </h2>
+
+                </header>
+                <footer><small>Gepost op: 20-2-2020 </small></footer>
+                <footer><small>schrijver: Jaimie Haesevoets </small></footer>
+                <p>Op maandag 10 Februari was beveiligings professional Salem te gast op Campus Proxymus om de leerlingen van graduaat programmeren bij te scholen over security bij web development. Dit om ze een beter idee te geven, en oplettender te maken bij de toekomstige ontwikkeling van applicaties. Kom er <a data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample" class="text-primary">
+                        hier
+                    </a> alles over te weten!</p><br>
+
+
+                <div class="collapse" id="collapseExample">
+                    <hr class="horRow1">
+                    <h5>De context</h5>
+                    Het gastcollege begon met de veelvoorkomende misverstanden, die betrekking hebben op de beveiliging van onze applicaties.
+                    Een van deze misverstanden was: “Onze applicatie is veilig, we hebben een firewall”, of "Onze applicatie is veilig want we hebben SSL". Er werd aangehaald dat je voor je eigen veiligheid regelmatig zelf je firewall moet nakijken, want het is mogelijk dat je al gehackt bent zonder dat je dit zelf door hebt. Het probleem is echter vaak dat klanten en bedrijven vaak niet genoeg weten over beveiliging en ze er de ernst niet van in zien. Ze willen gewoon een snelle applicatie die goed werkt en er wordt niet verder gekeken dan dat. We hebben de statistieken bekeken van welke soort cyberaanvallen het vaakst voorkomen en waar we dus het meest alert voor moeten zijn. Je kan bijvoorbeeld je systeem zelf proberen te laten hacken (bug bounty) zodat de hackers de fouten vinden in je systeem en je deze kan aanpakken. <br>Als je zelf wilt kijken of je persoonlijke gegevens mogelijks ergens gelekt zijn, klik <a href="https://haveibeenpwned.com/" target="_blank"> hier</a>.
+                    <br><br>
+                    <h5>Attacker model</h5>
+                    Een aanvalsmodel is een classificatie van cryptografische aanvallen die het soort toegang specificeren dat een <a href="#" data-toggle="tooltip" title="persoon die doet aan het analyseren en ontcijferen van codes, cijfers en cryptogrammen">cryptanalyst</a> heeft tot een aangevallen systeem wanneer het probeert een gecodeerd bericht te “breken”, dat door het systeem word genegeerd. <br><br>
+                    <h5>Technical attacks and Common vulnerabilities – OWASP Top 10.</h5>
+
+                    Dit onderdeel bevat de top 10 meest belangrijke web applicatie beveiligings risico’s. Dit onderwerp werd het langst besproken en was naar zeggen van de docent ook het belangrijkste. <br><br>
+                    <h5>1. Injection</h5>
+                    Dit is het misleiden van een applicatie om onbedoelde commando’s naar zijn “bron” te versturen. De typische scenario’s bij dit soort aanvallen bevat data manipulatie en het stelen van account informatie. Je kan jezelf hiertegen beschermen: vertrouw nooit user input (server-side input validatie gebruiken), Perform context-specific output encoding (het vervangen van HTML karakters naar hun gecodeerde vorm).
+                    <br><br>
+                    <h5>2. Broken authentication</h5>
+                    Kwetsbaarheden bij authenticatie systemen kunnen aanvallers toegang geven tot accounts van gebruikers, en zelfs de mogelijkheid geven om een heel systeem “over te nemen”. Een aanvaller kan dus bijvoorbeeld een lijst gegevens met duizenden login gegevens vastkrijgen, en een script gebruiken om deze (username/password) combinaties in te loggen op het systeem.
+                    De strategieën voor het voorkomen hiervan zijn werken met “2 stap authenticatie”, en een Limiet zetten op het aantal keer dat men kan proberen inloggen met foutieve gebruikersnamen/wachtwoorden.
+                    <br><br>
+                    <h5>3. Sensitive data exposure</h5>
+                    Veel web applicaties en API’s beschermen vaak gevoelige data niet goed. Aanvallers kunnen deze informatie stelen of aanpassen om fraude of andere misdaden te plegen. Deze gegevens kunnen dan worden aangepast bij het verzenden, of op de plaats waar ze opgeslagen staan. Een typische oorzaak van data exposure is het versturen van gegevens in gewone leesbare tekst of het gebruiken van oude “zwakke” cryptografische algoritmen. Je kan jezelf beschermen door controles uit te voeren, je data te versleutelen en ervoor zorgen dat je up-to-date algoritmes gebruikt. <br><br>
+                    <h5>4. XML External Entities (XXE)</h5>
+                    Dit is een aanval op een web applicatie die XML input vertaalt. Deze input kan verwijzen naar een externe entiteit (bijvoorbeeld harde schijf). Een XML vertaler kan misleid worden om data naar een onbevoegde externe entiteit te sturen, die gevoelige data direct naar de aanvaller kan sturen.
+                    Je kan jezelf beschermen door eenvoudigere data formats te gebruiken zoals JSON. <br>
+
+
+                    <h5>5. Broken Access Control</h5>
+                    Toegangscontrole verwijst naar een systeem dat de toegang tot informatie of functionaliteit beheert. Met gebroken toegangscontroles kunnen aanvallers autorisatie omzeilen en taken uitvoeren alsof ze bevoorrechte gebruikers zijn, zoals beheerders. Een typisch scenario: Toegangscontroles omzeilen door de URL, de interne applicatiestatus of de HTML-pagina te wijzigen. Hoe kan je dit voorkomen? Limiteer API en controller toegang om de schade te minimaliseren van geautomatiseerde aanvalstooling, houd toegangscontrolefouten in de gaten en waarschuw beheerders indien nodig. Implementeer eenmaal toegangscontrolemechanismen en hergebruik deze in de hele applicatie. <br><br>
+                    <h5>6. Security Misconfiguration</h5>
+                    Dit is de meest voorkomende kwetsbaarheid. Dit is vaak het gevolg door gebruik van standaardconfiguraties of het weergeven van overdreven uitgebreide fouten. Als fouten te uitgebreid getoond worden, kunnen deze kwetsbaarheden tonen in het systeem. Dit kan worden beperkt door ongebruikte functies te verwijderen en de foutmeldingen te veralgemenen. <br><br>
+                    <h5>7. Cross-Site Scripting</h5>
+                    Cross-Site Scripting kwetsbaarheden treden op wanneer webapplicaties gebruikers toelaten om aangepaste code toe te voegen aan een URL-pad of op een website die door andere gebruikers wordt gezien. Een aanvaller kan bijvoorbeeld een e-mail sturen naar een slachtoffer dat afkomstig lijkt te zijn van een vertrouwde bank. Deze link kan kwaadwillige JavaScript-code aan het einde van de URL hebben getagd. Als de site van de bank hier niet goed tegen beveiligd is, wordt die schadelijke code uitgevoerd in de webbrowser van het slachtoffer wanneer deze op de link klikt. Hoe kan je dit voorkomen? Vertrouw nooit user input, voer Contextspecifieke uitvoercodering uit. <br><br>
+                    <h5>8. Insecure Deserialization</h5>
+                    <a href="#" data-toggle="tooltip" title="het creëren van een object uit een opeenvolging van bytes">Deserialization</a>
+                    kan een aanvaller in staat stellen om code in de applicatie van op afstand uit te voeren, <a href="#" data-toggle="tooltip" title="geschreven naar schijf">geserialiseerde</a> objecten te wijzigen/verwijderen, of injectie aanvallen uit te voeren. Hoe kan je dit voorkomen? Implementeren van integriteitscontroles zoals digitale handtekeningen op geserialiseerde objecten. <br><br>
+                    <h5>9. Using Components With Known Vulnerabilities</h5>
+                    Componenten, zoals libraries, frameworks en andere softwaremodules, werken met dezelfde rechten als de toepassing. Als een kwetsbaar onderdeel wordt uitgebuit, kan een aanval ernstig gegevensverlies of serverovername veroorzaken.
+                    Hoe voorkomen? Verwijder niet gebruikte dependencies, onnodige toepassingen, componenten en documenten. <br><br>
+                    <h5>10. Insufficient Logging and Monitoring</h5>
+                    Veel webapplicaties ondernemen onvoldoende stappen om datalekken op te sporen. Dit zet aanvallers in staat om regelmatig over te stappen naar andere systemen en bedreigingen.
+                    Je kan niet aannemen dat de preventiemaatregelen hun werk doen, dus raad OWASP aan om voldoende logging/monitoring te doen, en een plan te hebben voor wanneer er iets misgaat.
+
+
+                </div>
+            </article><br><br>
+            <div class="paddingArticleNumber">
+                <article class="border border-success rounded " id="theMargin">
+                    <header>
+                        <h2>cybersecurity artikels</h2>
+
+                    </header>
+                    <footer><small>Gepost op: 20-2-2020 </small></footer>
+                    <footer><small>Gepost door: Jaimie Haesevoets </small></footer>
+                    <p>Bekijk <a data-toggle="collapse" href="#artikel" role="button" aria-expanded="false" aria-controls="artikel" class="text-success">
+                            hier
+                        </a> de cybersecurity artikels met betrekking op de BIV-classificatie en de OWASP top 10. </p><br>
+
+                    <div class="collapse" id="artikel">
+                        <hr class="horRow2">
+                        <h5>BIV-classificatie</h5><br>
+                        <h6>1. Beschikbaarheid:</h6>
+                        <p> GitHub hit with the largest DDoS attack ever seen: <a href="https://www.zdnet.com/article/github-was-hit-with-the-largest-ddos-attack-ever-seen/" target="_blank">DoS attack </a></p>
+                        <h6>2. Integriteit</h6>
+                        <p>Ransomware attack forces 2-day shutdown of natural gas pipeline: <a href="https://nakedsecurity.sophos.com/2020/02/20/ransomware-attack-forces-2-day-shutdown-of-natural-gas-pipeline/" target="_blank">cryptography</a></p>
+                        <h6>3. Vertrouwelijkheid</h6>
+                        <p>Hackers leak state emails and passwords: <a href="https://edition.mv/news/15053" target="_blank">Encryption – Decryption - Hashing and passwords </a></p><br>
+                        <h5>OWASP top 10</h5><br>
+                        <h6>Injection</h6>
+                        <p>Stuffing nonsense: Persistent cyberpunks are pummelling banks' public APIs, warns Akamai.
+                            Security biz clocked 55 million malicious login attempts on a client: <a href="https://www.theregister.co.uk/2020/02/20/bank_api_new_target_du_jour_akamai/" target="_blank">Data manipulation</a></p>
+                    </div>
+                </article>
+            </div>
+
+            <div class="paddingArticleNumber">
+                <article class="border border-warning rounded" id="theMargin">
+                    <header>
+                        <h2>Hoe SDLC toepassen binnen het geïntegreerd project? </h2>
+                    </header>
+                    <footer><small>Gepost op: 00-0-2020 </small></footer>
+                    <footer><small>Gepost door: Jaimie Haesevoets </small></footer>
+                    <p>Bekijk <a data-toggle="collapse" href="#SDLC" role="button" aria-expanded="false" aria-controls="SDLC" class="text-warning">
+                            hier
+                        </a> Hoe wij SDLC toepassen binnen het geïntegreerd project</p>
+                    <div class="collapse" id="SDLC">
+                        <hr class="horRow4">
+                        <!-- hier schrijven van sdlc-->
+                    </div>
+                </article>
+            </div>
+
+            <div class="paddingArticleNumber">
+                <article class="border border-danger rounded" id="theMargin">
+                    <header>
+                        <h2>security bug en security flaw</h2>
+                    </header>
+                    <footer><small>Gepost op: 00-0-2020 </small></footer>
+                    <footer><small>Gepost door: Jaimie Haesevoets </small></footer>
+                    <h5>Bug</h5>
+                    <p>Ergens in het ontwerp Acces control check vergeten</p>
+                    <h5>Flaw</h5>
+                    <p>Insecure direct object reference</p>
+                    <!-- 
+                                <p>Bekijk <a href="#" target="_blank" class="text-danger"> hier </a> niks.</p>
+                                 <div class="collapse" id="#">
+                        <hr class="horRow...">
+                        
+                    </div>      
+                    
+                      -->
+
+
+
+                </article>
+            </div>
+            <div class="paddingArticleNumber">
+                <article class="border border-primary rounded " id="theMargin">
+                    <header>
+                        <h2>E-privacy – digitale fingerprint</h2>
+                    </header>
+                    <footer><small>Gepost op: 00-0-2020 </small></footer>
+                    <footer><small>Gepost door: Jaimie Haesevoets </small></footer>
+                    <p>Bekijk <a href="https://imgur.com/a/VYTT1Tq#jePS4ND" target="_blank" class="text-primary"> hier </a>mijn digitale fingerprint.</p>
+                    <p>Je kan je digitale fingerprint verbeteren door een andere browser en/of een ander besturingssysteem te gebruiken die minder populair zijn. klik op onderstaande foto om mijn fingerprint te bekijken.</p>
+
+
+                </article>
+            </div>
+
+
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
