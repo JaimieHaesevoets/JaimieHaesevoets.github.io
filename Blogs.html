@@ -541,8 +541,8 @@
                         <h2>Data classificatie
 
                         </h2>
-<footer><small>(opnieuw) Gepost op: 24-03-2020 </small></footer>
-                <footer><small>schrijver: Jaimie Haesevoets </small></footer>
+                        <footer><small>(opnieuw) Gepost op: 24-03-2020 </small></footer>
+                        <footer><small>schrijver: Jaimie Haesevoets </small></footer>
                     </header>
 
                     <p>Klik <a data-toggle="collapse" href="#dataclass" role="button" aria-expanded="false" aria-controls="dataclass" class="text-primary">
@@ -575,10 +575,10 @@
                         <h2>Modelleer stap 1 en 2 (context en bedreigingen) voor het registreren van een nieuwe gebruiker met een email validatie
 
                         </h2>
-<footer><small>(opnieuw) Gepost op: 24-03-2020 </small></footer>
-                <footer><small>schrijver: Jaimie Haesevoets </small></footer>
+                        <footer><small>(opnieuw) Gepost op: 24-03-2020 </small></footer>
+                        <footer><small>schrijver: Jaimie Haesevoets </small></footer>
                     </header>
-
+<p>Ik heb op basis van de voorbeelden in de les 3 modellen gemaakt. Ik heb voor het model dat gebruik maakt van een mailservice de bedrijgingen onderaan de afbeelding opgelijst aande hand van de stride tabel. Ik wist niet of ik voor 'registreren van een nieuwe gebruiker met emailvalidatie' ook 3 modellen moest tekenen. Ik ben dit dus wel gedaan, maar heb niet 3 keer de bedrijgingen opgelijst omdat deze ongeveer hetzelfde zijn voor elk model. Over de risk evaluation zat ik met nog een aantal vragen omdat ik niet exact snap hoe ik dit moet doen. Omdat er geen mails beantwoord worden heb ik dit dus ook niet gedaan.</p>
                     <p>Klik <a data-toggle="collapse" href="#modellen" role="button" aria-expanded="false" aria-controls="modellen" class="text-success">
                             hier
                         </a> om er alles over te lezen. </p>
@@ -591,8 +591,350 @@
                                 <div class="carousel-item active">
                                     <img class="d-block w-100" src="Images/JUIST1.PNG" alt="Model 1">
                                 </div>
+                            </div><br><br>
 
+
+                            <div class="container">
+                                <h5>External entity</h5>
+                                <ul>
+                                    <li>Gebruiker
+                                        <p>spoofing: De gebruiker denkt dat hij met systeem aan het interageren is, maar eigenlijk is hij met een ander systeem aan het interageren dat onder controle van de aanvaller kan staan. Hierdoor kan de aanvaller bijvoorbeeld aanmeldgegevens proberen te ontfutselen.
+                                        </p>
+                                        <p>
+                                            Repudiation: De gebruiker kan verklaren dat hij bepaalde destructieve code niet heeft uitgevoerd. Bij eventuele schadeclaims is er geen bewijs dat het effectief de gebruiker in kwestie was.
+                                        </p>
+                                    </li> <br>
+                                    <li>
+                                        Mailserver
+                                        <p>Spoofing: De gebruiker denkt dat hij een bevestigingsmail krijgt van de mailserver voor account activatie. De aanvaller kan zich voor doen als de mailserver en zal zo gegevens van de gebruiker proberen ontfutselen.</p>
+                                        <p>
+                                            Tampering: De aanvaller kan verkeer van en naar de server proberan aanpassen.
+                                            Hierdoor kan hij op veel manieren de server onbruikbaar maken of gegevens stelen.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Er is altijd een kans op data lekkage. Dit kan zijn door phishing, malware of een aanvaller die fysieke toegang krijgt tot de e-mailserver.
+                                        </p>
+                                        <p>
+                                            Denail of service: Een e-mailserver is vatbaar voor deze aanvallen. Als een aanvaller een e-mail service stopt, kan zowel de communicatie als de productiviteit ernstig verstoord worden.
+                                        </p>
+
+                                    </li>
+                                </ul>
+                                <h5>Process</h5>
+                                <ul>
+                                    <li>
+                                        Indienen(registratieformulier)
+                                        <p>
+                                            spoofing: Het systeem denkt dat het registratiegegevens naar de active directory stuurt, maar stuurt dit eigenlijk naar de aanvaller.
+                                        </p>
+                                        <p>
+                                            Tampering: De code zou resources op het systeem kunnen wijzigen.
+                                        </p>
+                                        <p>
+                                            Repudiation: Het kan niet bewezen worden dat de juiste gebruiksgegevens worden doorgegeven.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Door het foutief invullen van de velden, is er een kans dat het systeem (door middel van een foutmelding die niet correct is afgehandeld) informatie vrijgeeft over de applicatie en zijn structuur. Deze informatie kunnen aanvallers dan misbruiken.
+                                        </p>
+                                        <p>
+                                            Denial of service: De code zou alle resources van het systeem kunnen
+                                            innemen (bv. herhaaldelijk grote files aanmaken om de schijfruimte
+                                            te vullen) waardoor het systeem onbruikbaar wordt.
+                                        </p>
+                                        <p>
+                                            Elevation of privilege: Code zou acties kunnen uitvoeren die de gebruiker normaal gezien niet zou kunnen uitvoeren. Bijvoorbeeld zich registreren als een administrator.
+                                        </p>
+                                    </li><br>
+                                    <li>
+                                        Active Directory
+                                        <p>
+                                            Spoofing: Active directory denkt dat hij regiistratiegegevens binnen krijgt, aanvallers kunnen dit vervangen hebben met kwaadaardige input.
+                                        </p>
+                                        <p>
+                                            Tampering: Een aanvaller kan de gegevens onderscheppen en deze aanpassen.
+                                        </p>
+                                        <p>
+                                            Repudiation: Kan niet bewezen worden dat gebruikersgegevens ontvangen zijn.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Door het foutief invullen van de velden, is er een kans dat het systeem (door middel van een foutmelding die niet correct is afgehandeld) informatie vrijgeeft over de applicatie en zijn structuur. Deze informatie kunnen aanvallers dan misbruiken.
+                                        </p>
+                                        <p>
+                                            Denial of service: De code zou alle resources van het systeem kunnen
+                                            innemen (bv. herhaaldelijk grote files aanmaken om de schijfruimte
+                                            te vullen) waardoor het systeem onbruikbaar wordt.
+                                        </p>
+                                        <p>
+                                            Elevation of privilege: Het proces kan gebruikt worden om eventuele gebruikergegevens van andere gebruikers op te vragen/te overschrijven.
+                                        </p>
+                                    </li> <br>
+                                    <li>
+                                        Aanvragen correcte gegevens
+                                        <p>
+                                            Spoofing: Het systeem denkt dat het de gebruiksgegevens (de correcte en niet correcte velden) naar de gebruiker stuurt maar stuurt dit naar de aanvaller.
+                                        </p>
+                                        <p>
+                                            Tampering: Deze aanvraag kan onderschept en aangepast worden om bijvoorbeeld de gebruiker via een kwaadardige link zich opnieuw te laten registren, om zo zijn gegevens in handen te krijgen.
+                                        </p>
+                                        <p>
+                                            Repudiation: Kan niet bewijzen of aanvraag naar correcte gegevens uitgevoerd is.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Als een foutmelding niet correct is afgehandeld, kan deze gevoelige informatie over het systeem weergeven, die door aanvallers misbruikt kan worden.
+                                        </p>
+                                        <p>
+                                            Denial of service: Door het overmatig ingeven van foutieve gegevens, kan dit process overbelast raken.
+                                        </p>
+                                        <p>
+                                            Elevation of privilege: Dit proces kan worden gebruikt om extra gebruikersgegevens op te vragen die niet van toepassing zijn voor de registratie, en de aanvaller dan kan misbruiken.
+                                        </p>
+                                    </li><br>
+                                    <li>
+                                        Controlleren gegevens
+                                        <p>
+                                            Spoofing: Het systeem denkt dat het de gebruiksgegevens (de correcte en niet correcte velden) naar de gebruiker stuurt maar stuurt dit naar de aanvaller.
+                                        </p>
+                                        <p>
+                                            Tampering: Deze aanvraag kan onderschept en aangepast worden en zo kan de aanvaller zelf laten conterolleren welke gegevens al aanwezich zijn in het systeem.
+                                        </p>
+                                        <p>
+                                            Repudiation: Het is niet te bewijzen dat de juiste gegevens gecontroleerd worden.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Een aanvaller zou de te controlleren gegevens kunnen onderscheppen.
+                                        </p>
+                                        <p>
+                                            Denial of service: Als een aanvaller dit proces vaak laat uitvoeren, kan dit process overbelast raken.
+                                        </p>
+                                        <p>
+                                            Elevation of privilege: Dit proces kan worden gebruikt om extra gebruikersgegevens op te vragen die niet van toepassing zijn voor de registratie, en de aanvaller dan kan misbruiken.
+                                        </p>
+                                    </li><br>
+                                    <li> (gebruiker) Bevestig
+                                        <p>
+                                            Spoofing: Aanvaller kan zich voor doen als de gebruiker en de mail bevestigen als hi toegang heeft tot de gebruiker zijn e-mail account.
+                                        </p>
+                                        <p>
+                                            Tampering: Deze bevestiging kan onderschept en afgebroken worden door een aanvaller.
+                                        </p>
+                                        <p>
+                                            Repudiation: Het is niet te bewijzen dat het juiste account is bevestigd.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Een aanvaller zou de te controlleren gegevens kunnen onderscheppen.
+                                        </p>
+                                        <p>
+                                            Denial of service: Als een aanvaller dit proces vaak laat uitvoeren, kan dit process overbelast raken.
+                                        </p>
+                                        <p>
+                                            Elevation of privilege: Dit proces kan worden gebruikt om extra gebruikersgegevens op te vragen die niet van toepassing zijn voor de registratie, en de aanvaller dan kan misbruiken.
+                                        </p>
+                                    </li><br>
+                                    <li>Activer account
+                                        <p>
+                                            Spoofing: aanvaller kan proces gebruiken om zelf accounts te activeren en deactiveren.
+                                        </p>
+                                        <p>
+                                            Tampering: Deze bevestiging kan onderschept en afgebroken worden door een aanvaller.
+                                        </p>
+                                        <p>
+                                            Repudiation: Het is niet te bewijzen dat het juiste account is bevestigd.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Een aanvaller kan dit proces gebruiken om de informatie van het te activeren account te stelen.
+                                        </p>
+                                        <p>
+                                            Denial of service: Als een aanvaller overmatig veel accounts aan maakt, kan dit process overbelast raken.
+                                        </p>
+                                        <p>
+                                            Elevation of privilege: Een aanvaller kan dit proces gebruiken om in de database naar administrator accounts te zoeken.
+                                        </p>
+                                    </li><br>
+
+                                </ul>
+                                <h5>Data store</h5>
+                                <ul>
+                                    <li>
+                                        Active directory inloggegevens database
+                                        <p>Tampering: De aanvaller kan toegang tot de database verkrijgen, en
+                                            past gebruikersinformatie aan.
+                                        </p>
+                                        <p>Non-repudiation: De aanvaller verwijdert logs die essentieel zijn voor
+                                            het bewijzen van acties die uitgevoerd zijn door de gebruikers.
+                                        </p>
+                                        <p>
+                                            Information disclosure: De aanvaller kan toegang tot de database
+                                            verkrijgen, en verkrijgt zo informatie over de gebruikers.
+
+                                        </p>
+                                        <p>
+                                            Denial of service: De aanvaller kan het geheugen van het medium
+                                            waarop de datastore opgeslagen is opvullen.
+                                        </p>
+                                    </li>
+                                </ul><br>
+                                <h5>Data flow</h5>
+                                <ul>
+                                    <li>
+                                        gebruiker --> indienen registratieformulier
+                                        <p>
+                                            Tampering: Een aanvaller kan gegbruiksgegevens aanpassen voordat deze worden ingediend.
+                                        </p>
+                                        <p>
+                                            Information disclosure: De registratiegegevens van de gebruiker kunnen gelezen worden door een aanvaller.
+                                        </p>
+                                        <p>
+                                            Denial of service: Een aanvaller kan de lijn van de gebruiker naar het
+                                            proces belasten, zodat aanmelden onmogelijk wordt.
+                                        </p>
+                                    </li><br>
+                                    <li>
+                                        Indienen gebruikersformulier --> Active directory
+                                        <p>
+                                            Tampering: Een aanvaller kan gegbruiksgegevens aanpassen voordat deze de active directory berijken.
+                                        </p>
+                                        <p>
+                                            Information disclosure: De registratiegegevens van de gebruiker kunnen gelezen worden door een aanvaller.
+                                        </p>
+                                        <p>
+                                            Denial of service: Een aanvaller kan de lijn naar het
+                                            proces belasten, zodat registreren of gegevens controleren onmogelijk wordt.
+                                        </p>
+                                    </li><br>
+                                    <li>
+                                     Active directory --> aanvragen correcte gegevens
+                                        <p>
+                                            Tampering: Een aanvaller kan de foutmelding aanpassen voordat deze de gebruiker berijkt.
+                                        </p>
+                                        <p>
+                                            Information disclosure: De juiste en foute registratiegegevens van de gebruiker kunnen gelezen worden door een aanvaller. Hij kan ook dit proces gebruiken om uit de active directory gegevens te lekken of aan te passen.
+                                        </p>
+                                        <p>
+                                            Denial of service: Een aanvaller kan de lijn naar het
+                                            proces belasten, zodat het aanvragen van correcte gegevens onmogelijk wordt.
+                                        </p>
+                                    </li><br>
+                                    <li>
+                                     aanvragen correcte gegevens --> indienen registratieformulier
+                                        <p>
+                                            Tampering: Een aanvaller kan de foutmelding aanpassen voordat deze de gebruiker berijkt.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Door het foutief invullen van de velden, is er een kans dat het systeem (door middel van een foutmelding die niet correct is afgehandeld) informatie vrijgeeft over de applicatie en zijn structuur. Deze informatie kunnen aanvallers dan misbruiken.
+                                        </p>
+                                        <p>
+                                            Denial of service: Een aanvaller kan de lijn naar het
+                                            proces belasten, zodat het aanvragen van correcte gegevens en sturen van een foutmelding onmogelijk wordt.
+                                        </p>
+                                    </li><br>
+                                    <li>
+                                     controleren gegevens --> active directory
+                                        <p>
+                                            Tampering: Een aanvaller kan de gebruikersgegevens aanpassen voordat deze de Active directory berijken.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Aanvaller kan de gebruikersgegevens lezen.
+                                        </p>
+                                        <p>
+                                            Denial of service: Een aanvaller kan de lijn naar het
+                                            proces belasten, zodat het controlleren gegevens onmogelijk wordt.
+                                        </p>
+                                    </li><br>
+                                    <li>
+                                     active directory inloggegevens database --> controleren gegevens
+                                        <p>
+                                            Tampering: Een aanvaller kan gegevens aanpassen en zo kijken welke gegevens er al dan niet in de database zitten.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Aanvaller kan deze lijn gebruiken om te kijken welke gegevens er al dan niet in de database aanwezich zijn.
+                                        </p>
+                                        <p>
+                                            Denial of service: Een aanvaller kan de lijn naar het
+                                            proces belasten, zodat het nakijken op duplicate gegevens onmogelijk wordt.
+                                        </p>
+                                    </li><br>
+                                     <li>
+                                     active directory inloggegevens database --> Aanvragen correcte gegevens
+                                        <p>
+                                            Tampering: Een aanvaller kan de foutmelding aanpassen en zo de gebruiker misleiden.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Aanvaller kan deze lijn gebruiken om te kijken welke gegevens er al dan niet in de database aanwezich zijn.
+                                        </p>
+                                        <p>
+                                            Denial of service: Een aanvaller kan de lijn naar het
+                                            proces belasten, melden van duplicate gegevens onmogelijk wordt.
+                                        </p>
+                                    </li><br>
+                                    <li>
+                                     active directory inloggegevens database --> activeer account
+                                        <p>
+                                            Tampering: Een aanvaller kan de bevestiging aanpassen er zo voor zorgen dat het account niet geactiveerd word.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Aanvaller kan deze lijn gebruiken om te kijken welke gegevens er al dan niet in de database aanwezich zijn en welke account er al dan niet geregistreerd worden.
+                                        </p>
+                                        <p>
+                                            Denial of service: Een aanvaller kan de lijn naar het
+                                            proces belasten (bv. door veel accounts tegelijk te activeren), waardoor het activeren van een account onmogelijk wordt.
+                                        </p>
+                                    </li><br>
+                                    <li>
+                                     active directory --> mailserver
+                                        <p>
+                                            Tampering: Een aanvaller kan de lijn gebruiken om de gebruikersgegevens aan te passen.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Aanvaller kan deze lijn gebruiken om de gebruikersgegevens in handen te krijgen.
+                                        </p>
+                                        <p>
+                                            Denial of service: Een aanvaller kan de lijn naar het
+                                            proces belasten waardoor de mailserver niks gaat doen.
+                                        </p>
+                                    </li><br>
+                                    <li>
+                                     mailserver --> gebruiker
+                                        <p>
+                                            Tampering: Een aanvaller kan de lijn gebruiken om de bevestigingsmail aan te passen voor bijvoorbeeld phishing.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Aanvaller kan deze lijn gebruiken om bijvoorbeeld zelf het account te activeren en gebruiken.
+                                        </p>
+                                        <p>
+                                            Denial of service: Een aanvaller kan de lijn naar het
+                                            proces belasten waardoor er geen bevestigingsmail word verstuurd.
+                                        </p>
+                                    </li><br>
+                                    <li>
+                                     gebruiker --> bevestig
+                                        <p>
+                                            Tampering: Zelfde als hierboven.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Zelfde als hierboven.
+                                        </p>
+                                        <p>
+                                            Denial of service: Een aanvaller kan de lijn naar het
+                                            proces belasten waardoor de gebruiker zijn antwoord niet door komt.
+                                        </p>
+                                    </li><br>
+                                    <li>
+                                     bevestig --> active directory inloggegevens database
+                                        <p>
+                                            Tampering: Aanvaller kan de bevestiging aanpassen.
+                                        </p>
+                                        <p>
+                                            Information disclosure: Aanvaller kan via deze lijn zien wat er al dan niet in de database zit.
+                                        </p>
+                                        <p>
+                                            Denial of service: Een aanvaller kan de lijn naar het
+                                            proces belasten waardoor de gebruiker zijn bevestiging niet door komt.
+                                        </p>
+                                    </li><br>
+                                </ul>
                             </div>
+                        <hr class="horRow2">
+
                         </div><br><br>
                         <p>Het onderstaande model is gebaseerd op het gebruiken van een interne mailserver.</p>
 
