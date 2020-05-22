@@ -1193,7 +1193,7 @@
                         <hr class="horRow3">
                         <h5>Hoe en in welke mate (metrieken) kan je de beschikbaarheid van het systeem garanderen?</h5>
                         <p>Hoe: door het ontdubbelen van het systeem. We laten de applicatie simultaan draaien (gespiegeld) in twee serverruimtes. Bij de onbeschikbaarheid van (de systemen in) één serverruimte, nemen de systemen in de andere serverruimte het naadloos over.</p>
-                        <p>Een andere en minder complexe oplossing is het constant monitoren van het systeem. Als het systeem uit valt word er en mail verzoden naar de administrators. Die kunnen dan het systeem weer proberen online te krijgen.  </p>
+                        <p>Een andere en minder complexe oplossing is het constant monitoren van het systeem. Als het systeem uit valt word er en mail verzoden naar de administrators. Die kunnen dan het systeem weer proberen online te krijgen. </p>
 
                         <h5>Hoe en in welke mate (metrieken) kan je de beschikbaarheid van de data garanderen?</h5>
                         <p>Hoe: we gaan database replication toepassen (master-slave) om de beschikbaarheid te garanderen. Dit wil zeggen dat we een master database gaan hebben (waar alle lees en schijf operaties gebeuren) en een slave database die wacht op een kopie van gegevens van de master database. Wanneer de gegevens de slave database bereiken worden de nodige aanpassingen gebeurd. Dit wil zeggen dat we een bijna synchrone kopie hebben van de master database, die klaarstaat voor als er iets fout loopt.</p>
@@ -1268,42 +1268,162 @@
                         <h2>Voeg authorisatie toe aan de MVCMovie applicatie via Auth0
 
                         </h2>
-                        <footer><small>Gepost op: 08-05-2020 </small></footer>
+                        <footer><small>Gepost op: 21-05-2020 </small></footer>
                         <footer><small>schrijver: Jaimie Haesevoets </small></footer>
                     </header>
 
-                    <p>Klik <a data-toggle="collapse" href="#BCP" role="button" aria-expanded="false" aria-controls="" class="text-success">
+                    <p>Klik <a data-toggle="collapse" href="#mvcAuthorisatie" role="button" aria-expanded="false" aria-controls="" class="text-success">
                             hier
                         </a> om er alles over te lezen. </p>
 
-                    <div class="collapse" id="BCP"><br>
+                    <div class="collapse" id="mvcAuthorisatie"><br>
                         <hr class="horRow2">
-                        <h5></h5>
+                        <p>Ik heb meerdere keren mijn best gedaan om authorisatie toe te voegen aan de MVCMovie applicatie. Ik ben drie keer opnieuw begonnen, heb uren gezocht naar oplossingen en stuitte altijd op nieuwe problemen. Maar ondanks de hulp van de docent en mijn medestudenten is het mij niet gelukt om deze opdracht succesvol af te maken. Daarom ga ik toch mijn best doen om te laten zien hoe ik authorisatie had toegepast als mijn applicatie correct werkte.</p><br>
+                        <h5>Iedereen kan films opvragen.</h5>
+                        <p>In de MoviesController wordt er boven de “Index” actie de [AllowAnonymous] tag geplaatst. Dit laat anonieme gebruikers toe om de films te bekijken. </p>
+                        <div id="mvcauth1" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="Images/mvc1.PNG" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="Images/mvc2.PNG" alt="Second slide">
+                                </div>
+
+                            </div>
+                            <a class="carousel-control-prev" href="#mvcauth1" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#mvcauth1" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <br>
+                        <h5>Aangemelde gebruikers kunnen details van films opvragen.</h5>
+                        <p>Om dit resultaat te bekomen wordt er in de MoviesController (boven de details actie) [Authorize] toegevoegd. Dit betekend dat mensen die zijn geautoriseerd (en dus ingelogd in de applicatie) dan pas de details van de film kunnen opvragen.
+                            Als men niet is ingelogd en er word op “details” gedrukt, dan word de persoon in kwestie doorverwezen naar het loginscherm.
+                        </p>
+                        <div id="mvcauth2" class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="Images/mvc3.PNG" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="Images/mvc4.PNG" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block w-100" src="Images/mvc5.PNG" alt="Third slide">
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#mvcauth2" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#mvcauth2" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div><br>
+                        <h5>Aangemelde film-reviewers kunnen films updaten.</h5>
+                        <p>Om in te loggen als een film- reviewer zou ik een rollen systeem toepassen in de applicatie.
+                            Zo kan je de rol van een film- reviewer toegediend krijgen nadat je geregistreerd bent in de applicatie. In de MoviesController word er dan boven de “Edit” actie de [Authorize(Roles = "FilmReviewer")]
+                            Tag toegevoegd. Dit zorgt ervoor dat alleen mensen die de rol van film- reviewer hebben een film kunnen updaten.
+                        </p>
+                        <div class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="Images/mvc6.PNG" alt="First slide">
+                                </div>
+
+                            </div>
+                        </div><br>
+                        <h5>Aangemelde admins kunnen films maken en deleten.</h5>
+                        <p>Hier volgen we hetzelfde principe als bij de vorige actie, alleen doen we dit nu bij de rol van admin. We plaatsen dus [Authorize(Roles = "Admin")] boven de create en delete acties in de MoviesController.</p>
+                        <div class="carousel slide" data-ride="carousel">
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block w-100" src="Images/mvc7.PNG" alt="First slide">
+                                </div>
+
+                            </div>
+                        </div>
 
                     </div>
-
                 </article>
             </div>
 
-           <div class="paddingArticleNumber">
+            <div class="paddingArticleNumber">
                 <article class="border border-warning rounded " id="theMargin">
                     <header>
                         <h2>Voeg authorisatie toe aan de GIP zoals je uitgewerkt hebt. Maak gebruik van Microsoft doc
 
 
                         </h2>
-                        <footer><small>Gepost op: 08-05-2020 </small></footer>
+                        <footer><small>Gepost op: 21-05-2020 </small></footer>
                         <footer><small>schrijver: Jaimie Haesevoets </small></footer>
                     </header>
 
-                    <p>Klik <a data-toggle="collapse" href="#" role="button" aria-expanded="false" aria-controls="" class="text-warning">
+                    <p>Klik <a data-toggle="collapse" href="#authGIP" role="button" aria-expanded="false" aria-controls="" class="text-warning">
                             hier
                         </a> om er alles over te lezen. </p>
 
-                    <div class="collapse" id=""><br>
+                    <div class="collapse" id="authGIP"><br>
                         <hr class="horRow3">
-                        <h5></h5>
+                    <p>Dit kan u zien in ons GIP project.</p>
 
+                    </div>
+                </article>
+            </div>
+
+            <div class="paddingArticleNumber">
+                <article class="border border-danger rounded " id="theMargin">
+                    <header>
+                        <h2>Ontwerp en beschrijf het data authorisatie-model voor GIP ”Leerplatform”.
+                        </h2>
+                        <footer><small>Gepost op: 21-0-2020 </small></footer>
+                        <footer><small>schrijver: Jaimie Haesevoets </small></footer>
+                    </header>
+
+                    <p>Klik <a data-toggle="collapse" href="#authmodel" role="button" aria-expanded="false" aria-controls="" class="text-danger">
+                            hier
+                        </a> om er alles over te lezen. </p>
+
+                    <div class="collapse" id="authmodel"><br>
+                        <hr class="horRow4">
+
+                        <h5>publieke data</h5>
+                        <p>Iedereen die het leerplatform bezoekt heeft toegang tot de publieke data.</p>
+
+
+                        <ul>
+                            <li>Naam van het bedrijf/ de applicatie</li>
+                            <li>Naam en voornaam van de ontwikkelaars van de applicatie.</li>
+                        </ul>
+
+                        <h5>Intern</h5>
+                        <p>Ik plaats de volgende punten bij intern omdat je deze pas kan zien als je bent ingelogd op het leerplatform. Daarom denk ik dat je dus zo deel uit maakt van het bedrijf. Als je geen student, admin of lector bent, en dus niet kan inloggen, kan je deze data niet zien. </p>
+                        <p>Volgende punten zijn zichtbaar als student (en ook voor lector en admin):</p>
+                        <ul>
+                            <li>De verschillende vakken op het leerplatform en hun eigenschappen: vakcode, titel, studiepunten. </li>
+                            <li>De richtingen (bijvoorbeeld informatica) met hun eigenschappen: code, titel, type, studiepunten.</li>
+                            <li>De planning (datum, start/eind uur, vak, lokaal)</li>
+                        </ul>
+                        <p>Volgende punten zijn zichtbaar als lector (en ook voor admin): </p>
+                        <ul>
+                            <li>De aanvragen van de studenten om zich in te schrijven voor een vak.</li>
+                            <li>Alle beschikbare lokalen en hun eigenschappen: lokaal nummer, type lokaal, capaciteit, beschikbare middelen.</li>
+                        </ul>
+                        <h5>Vertrouwd</h5>
+                        <ul>
+                            <li>De rol die een gebruiker heeft op het leerplatform(student, lector, admin) (alleen zichtbaar voor admin)</li>
+                            <li>De naam/voornaam, email adres en geboortedatum van de gebruiker van het leerplatform. (alleen zichtbaar voor admin)</li>
+                        </ul>
+                        <h5>Confidentiaal</h5>
+                        <ul>
+                            <li>Of een student (die zich heeft ingeschreven voor een vak) geweigerd is, en de reden hiervoor. (student en lector kunnen dit zien)</li>
+                        </ul>
                     </div>
 
                 </article>
